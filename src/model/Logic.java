@@ -1,9 +1,13 @@
 package model;
 
-public class Logic {
+import processing.core.PApplet;
 
-	public Logic() {
-		// TODO Auto-generated constructor stub
+public class Logic {
+	
+	PApplet app;
+
+	public Logic(PApplet app) {
+		this.app = app;
 	}
 
 }
