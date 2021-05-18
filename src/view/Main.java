@@ -1,5 +1,6 @@
 package view;
 
+import controlP5.ColorWheel;
 import controlP5.ControlP5;
 import controller.ControllerMain;
 import processing.core.PApplet;
@@ -24,6 +25,15 @@ public class Main extends PApplet{
 		controllerMain = new ControllerMain(this);
 		
 		
+		cp5.addColorWheel("wheel", 200, 465, 120).setRGB(color(255,255,255))
+		//.setHue(255)
+		
+		.setPosition(200,200)
+	
+		//.setLabel(ColorWheel.getRGB())
+		
+		;
+		
 		cp5.addBang("compare")
 	     .setPosition(140,400)
 	     .setSize(110,40)
@@ -41,7 +51,9 @@ public class Main extends PApplet{
 	
 	
 	public void draw() {
-		background(0);
+		background(255);
+		fill(0);
+		text(cp5.get(ColorWheel.class,"wheel").getRGB(),50,60);
 	}
 	
 	public void compare() {
