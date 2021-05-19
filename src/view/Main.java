@@ -78,7 +78,9 @@ public class Main extends PApplet {
 		try {
 
 			controllerMain.checkColor(r1, g1, b1, r2, g2, b2);
-			numException = 0;
+			messageExc = ("CORRECTO: Las figuras tienen el mismo color\n" + "Cuadrado r " + r1
+					+ " g " + g1 + " b " + b1 + "\nCírculo r " + r2 + " g " + g2 + " b " + b2);
+			numException = 1;
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 			messageExc = e.getMessage();
@@ -117,19 +119,21 @@ public class Main extends PApplet {
 	}
 
 	private void showMessages() {
+		textSize(12);
 		fill(255, 0, 0);
 		switch (numException) {
 		case 0:
 
 			break;
 		case 1:
-			text(messageExc, 250, 400);
+			fill(27, 153, 139);
+			text(messageExc, 130, 400);
 			break;
 		case 2:
-			text(messageExc, 250, 400);
+			text(messageExc, 130, 400);
 			break;
 		case 3:
-			text(messageExc, 250, 400);
+			text(messageExc, 130, 400);
 			break;
 
 		default:
