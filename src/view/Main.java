@@ -33,15 +33,8 @@ public class Main extends PApplet {
 		controllerMain = new ControllerMain(this);
 		cp = cp5.addColorPicker("picker").setPosition(130, 230).setColorValue(color(20, 20, 20, 255));
 
+		createButtons();
 		
-
-		
-		
-		cp5.addBang("compare").setPosition(140, 320).setSize(110, 40).setLabel("Comparar").getCaptionLabel()
-				.align(ControlP5.CENTER, ControlP5.CENTER);
-
-		cp5.addBang("clear").setPosition(265, 320).setSize(110, 40).setLabel("Limpiar").getCaptionLabel()
-				.align(ControlP5.CENTER, ControlP5.CENTER);
 	}
 
 	public void draw() {
@@ -56,7 +49,6 @@ public class Main extends PApplet {
 
 	public void mousePressed() {
 		if (controllerMain.selectCircle()) {
-			System.out.println("pinta círculo");
 			
 			r2 = r;
 			g2 = g;
@@ -65,7 +57,6 @@ public class Main extends PApplet {
 		}
 
 		if (controllerMain.selectSquare()) {
-			System.out.println("pinta cuadrado");
 			r1 = r;
 			g1 = g;
 			b1 = b;
@@ -89,9 +80,6 @@ public class Main extends PApplet {
 	}
 
 	public void clear() {
-
-		System.out.println("limpio");
-
 		
 			r1 = 255;
 			g1 = 255;
@@ -101,8 +89,17 @@ public class Main extends PApplet {
 			g2 = 255;
 			b2 = 255;
 		
-		
 
 	}
+	
+	private void createButtons() {
+		cp5.addBang("compare").setPosition(140, 320).setSize(110, 40).setLabel("Comparar").getCaptionLabel()
+		.align(ControlP5.CENTER, ControlP5.CENTER);
+
+		cp5.addBang("clear").setPosition(265, 320).setSize(110, 40).setLabel("Limpiar").getCaptionLabel()
+				.align(ControlP5.CENTER, ControlP5.CENTER);
+	}
+	
+
 
 }
