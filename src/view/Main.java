@@ -93,7 +93,6 @@ public class Main extends PApplet {
 		try {
 			checkNoColor();
 		} catch (NoColorException e1) {
-			System.out.println("sirvooooo  no colorrrr");
 			messageExc = e1.getMessage();
 			numException = 3;
 		}
@@ -117,8 +116,6 @@ public class Main extends PApplet {
 
 			controllerMain.noColor(r1, g1, b1, r2, g2, b2);
 
-			
-			System.out.println(("nocolor"));
 		}
 
 
