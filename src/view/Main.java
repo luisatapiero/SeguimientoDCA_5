@@ -7,6 +7,7 @@ import controlP5.ColorPicker;
 import controlP5.ControlEvent;
 import controlP5.ControlP5;
 import controller.ControllerMain;
+import exception.NoColorException;
 import exception.ValidationColorException;
 import processing.core.PApplet;
 
@@ -73,8 +74,9 @@ public class Main extends PApplet {
 		}
 	}
 
-	public void compare() throws ValidationColorException {
-
+	public void compare() throws NoColorException, ValidationColorException{
+		
+		
 		try {
 
 			controllerMain.checkColor(r1, g1, b1, r2, g2, b2);
@@ -87,8 +89,17 @@ public class Main extends PApplet {
 			numException = 2;
 
 		}
+		
+		try {
+			checkNoColor();
+		} catch (NoColorException e1) {
+			System.out.println("sirvooooo  no colorrrr");
+			messageExc = e1.getMessage();
+			numException = 3;
+		}
 
 	}
+	
 
 	public void clear() {
 
@@ -101,6 +112,15 @@ public class Main extends PApplet {
 		b2 = 255;
 
 	}
+	
+	private void checkNoColor() throws NoColorException{
+
+			controllerMain.noColor(r1, g1, b1, r2, g2, b2);
+
+			
+			System.out.println(("nocolor"));
+		}
+
 
 	private void createButtons() {
 		cp5.addBang("compare").setPosition(140, 320).setSize(110, 40).setLabel("Comparar").getCaptionLabel()
@@ -133,6 +153,7 @@ public class Main extends PApplet {
 			text(messageExc, 130, 400);
 			break;
 		case 3:
+			fill(255, 0, 0);
 			text(messageExc, 130, 400);
 			break;
 
