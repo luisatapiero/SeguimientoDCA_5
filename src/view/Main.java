@@ -15,6 +15,8 @@ public class Main extends PApplet{
 	private ControlP5 cp5;
 	ColorPicker cp;
 	int r = 255, g = 255, b = 255, a;
+	int r1 = 255, g1 = 255, b1 = 255, a1;
+	int r2 = 255, g2 = 255, b2 = 255, a2;
 
 	public static void main(String[] args) {
 		PApplet.main(Main.class.getName());
@@ -52,21 +54,30 @@ public class Main extends PApplet{
 	
 	 
 	public void draw() {
-		/*background(255);
-		fill(0);
-		text(cp5.get(ColorWheel.class,"wheel").getRGB(),50,60);*/
-		
-		//background(cp.getColorValue());
+
 		background(255);
-		  fill(r,g,b);
+		ellipseMode(CORNER);
+		  fill(r1,g1,b1);
 		  rect(100, 80, 100, 100);
-		  ellipse(350, 130, 100, 100);
+		  fill(r2,g2,b2);
+		  ellipse(300, 80, 100, 100);
 	}
+	
+	public void mousePressed() {
+		if (controllerMain.selectCircle()) {
+			System.out.println("Esta sirviendo");
+		}
+	
+	
+		if (controllerMain.selectSquare()) {
+			System.out.println("Esta sirviendo 2");
+		}
+}
 	
 	public void controlEvent(ControlEvent c) {
 		//System.out.println("sirvoooo");
-		  //if(c.isFrom(cp)) {
-			  
+		  if(c.isFrom(cp)) {
+			  System.out.println("sirvoooo");
 		    r = (int) (c.getArrayValue(0));
 		    g = (int)(c.getArrayValue(1));
 		    b = (int)(c.getArrayValue(2));
@@ -74,23 +85,33 @@ public class Main extends PApplet{
 		    
 		    //col = color(r,g,b,a);
 		    //System.out.println("event\talpha:"+a+"\tred:"+r+"\tgreen:"+g+"\tblue:"+b+"\tcol"+col);
-		  //}
+		  }
 		}
 
-		// color information from ColorPicker 'picker' are forwarded to the picker(int) function
+
 		void picker(int col) {
 		 //System.out.println("picker\talpha:"+alpha(col)+"\tred:"+red(col)+"\tgreen:"+green(col)+"\tblue:"+blue(col)+"\tcol"+col);
+			System.out.println("sirvoooo");
 		}
 	
 	public void compare() {
 
 		System.out.println("comparo");
+		
 	
 		}
 	
 	public void clear() {
 
 		System.out.println("limpio");
+		
+		r1 = 255; 
+		g1 = 255;
+		b1 = 255;
+		
+		r2 = 255; 
+		g2 = 255;
+		b2 = 255;
 		  
 	}
 	
