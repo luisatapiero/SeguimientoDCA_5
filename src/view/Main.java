@@ -14,7 +14,7 @@ public class Main extends PApplet{
 	private ControllerMain controllerMain;
 	private ControlP5 cp5;
 	ColorPicker cp;
-	int r, g, b, a;
+	int r = 255, g = 255, b = 255, a;
 
 	public static void main(String[] args) {
 		PApplet.main(Main.class.getName());
@@ -30,17 +30,9 @@ public class Main extends PApplet{
 		
 		controllerMain = new ControllerMain(this);
 		
-		
-		/*cp5.addColorWheel("wheel", 200, 465, 120).setRGB(color(255,255,255))
-		//.setHue(255)
-		
-		.setPosition(200,200)
-	
-		//.setLabel(ColorWheel.getRGB())*/
-		
 		 cp5.addColorPicker("picker")
 		          .setPosition(130, 230)
-		          .setColorValue(color(255, 128, 22, 255))
+		          .setColorValue(color(20, 20, 20, 255))
 		          ;
 		
 		cp5.addBang("compare")
@@ -67,7 +59,8 @@ public class Main extends PApplet{
 		//background(cp.getColorValue());
 		background(255);
 		  fill(r,g,b);
-		  rect(50, 90, 275, 80);
+		  rect(100, 80, 100, 100);
+		  ellipse(350, 130, 100, 100);
 	}
 	
 	public void controlEvent(ControlEvent c) {
